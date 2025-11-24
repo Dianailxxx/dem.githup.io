@@ -1,0 +1,120 @@
+kate <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Year Crossword</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #e6f7ff, #ffffff);
+      text-align: center;
+      padding: 20px;
+      color: #1a1a1a;
+    }
+    h1 {
+      color: #d32f2f;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .crossword {
+      display: inline-block;
+      margin: 20px auto;
+      border: 3px solid #333;
+      border-collapse: collapse;
+    }
+    .crossword td {
+      width: 36px;
+      height: 36px;
+      border: 1px solid #666;
+      text-align: center;
+      vertical-align: middle;
+      font-weight: bold;
+      font-size: 16px;
+      background-color: #fff;
+      color: #000;
+    }
+    .black {
+      background-color: #000;
+    }
+    .legend {
+      margin-top: 25px;
+      text-align: left;
+      display: inline-block;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 500px;
+    }
+    .legend h3 {
+      margin-top: 0;
+      color: #1976d2;
+    }
+    .legend ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .legend li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎄 New Year Crossword (5 Words) 🎄</h1>
+
+  <table class="crossword" id="crosswordGrid">
+    <!-- Grid will be filled by JavaScript -->
+  </table>
+
+  <div class="legend">
+    <h3>Words in the crossword:</h3>
+    <ul>
+      <li>1. <strong>tree</strong> – A decorated evergreen plant during holidays</li>
+      <li>2. <strong>tangerine</strong> – A citrus fruit often found in Christmas stockings</li>
+      <li>3. <strong>snowgirl</strong> – A snowy character, female version of a snowman</li>
+      <li>4. <strong>balloon</strong> – A colorful inflatable decoration (note: corrected spelling)</li>
+      <li>5. <strong>snow</strong> – Frozen white flakes from the sky</li>
+    </ul>
+  </div>
+
+  <script>
+    // Crossword grid: 10 rows x 10 columns
+    // Words:
+    // - "tree" horizontally at row 0, col 0–3
+    // - "tangerine" vertically at col 2, rows 0–9
+    // - "snow" horizontally at row 7, col 2–5
+    // - "snowgirl" vertically at col 4, rows 7–14 → but we adapt to fit
+    // - "balloon" horizontally at row 9, col 3–9
+
+    // Final adapted grid (10x10)
+    const grid = [
+      ['T', 'R', 'T', '',  '',  '',  '',  '',  '',  ''],
+      ['',  '',  'A', '',  '',  '',  '',  '',  '',  ''],
+      ['',  '',  'N', '',  '',  '',  '',  '',  '',  ''],
+      ['',  '',  'G', '',  '',  '',  '',  '',  '',  ''],
+      ['',  '',  'E', '',  '',  '',  '',  '',  '',  ''],
+      ['',  '',  'R', '',  '',  '',  '',  '',  '',  ''],
+      ['',  '',  'I', '',  '',  '',  '',  '',  '',  ''],
+      ['',  '',  'S', 'N', 'O', 'W', '',  '',  '',  ''],
+      ['',  '',  'N', '',  'G', '',  '',  '',  '',  ''],
+      ['',  '',  'E', 'B', 'I', 'R', 'L', 'L', 'O', 'N']
+    ];
+
+    const table = document.getElementById('crosswordGrid');
+    grid.forEach(row => {
+      const tr = document.createElement('tr');
+      row.forEach(cell => {
+        const td = document.createElement('td');
+        if (cell === '') {
+          td.classList.add('black');
+        } else {
+          td.textContent = cell;
+        }
+        tr.appendChild(td);
+      });
+      table.appendChild(tr);
+    });
+  </script>
+</body>
+</html>
