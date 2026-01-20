@@ -222,4 +222,152 @@
     </script>
 
 </body>
+</html> 
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой блог</title>
+    <style>
+        /* Голубой фон */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f2ff; /* Светло-голубой */
+            margin: 0;
+            padding: 20px;
+            color: #003366;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        h1, h2 {
+            color: #0055aa;
+        }
+
+        .post {
+            background-color: white;
+            padding: 16px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -20px;
+            color: #ffffff; /* Белые снежинки на голубом фоне — нежно и читаемо */
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear forwards;
+            z-index: 1;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(105vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Скрипт для снежинок -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const count = 25;
+            for (let i = 0; i < count; i++) {
+                const flake = document.createElement('div');
+                flake.innerHTML = '❄';
+                flake.classList.add('snowflake');
+                flake.style.left = Math.random() * 100 + 'vw';
+                flake.style.fontSize = (Math.random() * 14 + 14) + 'px';
+                flake.style.opacity = Math.random() * 0.7 + 0.3;
+                flake.style.animationDuration = (Math.random() * 8 + 6) + 's';
+                body.appendChild(flake);
+                setTimeout(() => flake.remove(), 12000);
+            }
+        });
+    </script>
+
+    <!-- Основной контент блога -->
+
+    <div class="post">
+        <h1>Привет, мир!</h1>
+        <h1>Новогодние кроссворды</h1>
+        <p><a href="krossvordRU.html">Русский кроссворд</a></p>
+        <p><a href="krossvordEN.html">English crossword</a></p>
+    </div>
+
+    <div class="post">
+        <p>
+            Иконки: 
+            <a target="_blank" href="https://icons8.com/icon/yHeF9urVx2aM/confetti-ball">Новый год</a> 
+            иконка от 
+            <a target="_blank" href="https://icons8.com">Icons8</a>
+        </p>
+    </div>
+
+    <div class="post">
+        <h2>19.12.2025</h2>
+        <p><img src="Icons/icons8.png" alt="Новый год" style="max-width:100px;"></p>
+        <p>Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html">здесь</a>.</p>
+    </div>
+
+    <div class="post">
+        <h2>06.12.2025</h2>
+        <p>Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html">здесь</a>.</p>
+    </div>
+
+    <div class="post">
+        <h2>15 октября, 2025</h2>
+        <p>
+            Я сделала Новогодние кроссворды для сайта 
+            <a href="https://dianailxxx.github.io/dem.github.io/" title="Блог моего друга">здесь</a>.
+        </p>
+    </div>
+
+    <div class="post">
+        <h2>1 сентября, 2025</h2>
+        <blockquote>Путешествие в тысячу миль начинается с одного шага (Лао Цзы)</blockquote>
+        <p>Оставляю в прошлом скучную неинтересную локальную файловую систему ради Всемирной паутины.</p>
+    </div>
+
+    <div class="post">
+        <h2>13 января, 2026</h2>
+        <h1>Как устроены доменные имена</h1>
+        <p>
+            Доменное имя моего сайта состоит из нескольких уровней:
+            <ul>
+                <li>корневой уровень — <code>.</code></li>
+                <li>верхний уровень — <code>.io</code></li>
+                <li>домен второго уровня — <code>github</code></li>
+                <li>поддомен — <code>lila008-9672413</code></li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="post">
+        <h2>17 января, 2026</h2>
+        <p>
+            Апельсин — К=17<br>
+            Абрикос — К=27<br>
+            а. ФХНЗКЧ — ПРИВЕТ К=5<br>
+            б. ЦЕБФ — ВЕСНА К=20<br>
+            ВАЗЯНГА — ЙФШЩШЛЙ (при ключе K=10)
+        </p>
+    </div>
+
+    <div class="post">
+        <h2>20 января, 2026</h2>
+        <p>
+            Закрытый ключ и открытый ключ — основа асимметричной криптографии.
+            В публичном шрифте, с голубым фоном и снежинками.
+        </p>
+    </div>
+
+</body>
 </html>
