@@ -109,3 +109,117 @@
 </body>
 </html>
     
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ключ 700</title>
+    <style>
+        /* Розовый фон всего экрана */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffc0cb; /* Светло-розовый */
+            margin: 0;
+            padding: 20px;
+            color: #003366;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        h1 {
+            color: #d32f2f; /* Темно-красный для контраста */
+            text-align: center;
+        }
+
+        .info {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            max-width: 600px;
+            margin: 30px auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .note {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* Стиль для снежинок */
+        .snowflake {
+            position: absolute;
+            top: -20px;
+            color: #ff0000; /* Красный цвет */
+            font-size: 24px;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        /* Анимация падения */
+        @keyframes fall {
+            to {
+                transform: translateY(105vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ключ: 700 (в десятичной системе)</h1>
+
+    <div class="info">
+        <p>Исходный ключ: <strong>700</strong></p>
+        
+        <p>Для шифра Цезаря эффективный сдвиг определяется по модулю длины алфавита:</p>
+        
+        <ul>
+            <li><strong>Английский алфавит</strong> (26 букв):<br>
+                700 mod 26 = <strong>24</strong></li>
+            
+            <li><strong>Русский алфавит</strong> (33 буквы, без «ё»):<br>
+                700 mod 33 = <strong>7</strong></li>
+        </ul>
+
+        <p class="note">Таким образом, при шифровании:
+            <br>— на английском используйте сдвиг <code>K = 24</code>,
+            <br>— на русском — сдвиг <code>K = 7</code>.</p>
+    </div>
+
+    <!-- Скрипт для генерации снежинок -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const snowflakesCount = 30; // Количество снежинок
+
+            for (let i = 0; i < snowflakesCount; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.innerHTML = '❄'; // Символ снежинки
+                snowflake.classList.add('snowflake');
+
+                // Случайное положение по горизонтали
+                snowflake.style.left = Math.random() * 100 + 'vw';
+                // Случайный размер
+                const size = Math.random() * 20 + 10; // от 10px до 30px
+                snowflake.style.fontSize = size + 'px';
+                // Случайная прозрачность
+                snowflake.style.opacity = Math.random() * 0.7 + 0.3;
+                // Случайная длительность анимации (от 5 до 15 сек)
+                snowflake.style.animationDuration = (Math.random() * 10 + 5) + 's';
+
+                body.appendChild(snowflake);
+
+                // Удаляем снежинку после завершения анимации, чтобы не перегружать DOM
+                setTimeout(() => {
+                    snowflake.remove();
+                }, 15000);
+            }
+        });
+    </script>
+
+</body>
+</html>
